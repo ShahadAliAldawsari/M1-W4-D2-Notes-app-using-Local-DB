@@ -12,5 +12,6 @@ fun AllNotesScreen(notesList:List<Note>, isDark:MutableState<Boolean>){
         Text("No Notes Yet!!")
     }else{
         //Lazy Column
+        
     }
 }
