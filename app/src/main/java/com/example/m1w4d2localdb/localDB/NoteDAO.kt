@@ -29,8 +29,8 @@ interface NoteDao {
     @Query("SELECT * FROM notes WHERE id=:id")
     fun getNoteById(id:Long): Note
 
-    //Check if the notes DAO is empty
-    @Query("SELECT (SELECT COUNT(*) FROM notes) == 0")
-    fun isEmpty(): Boolean
+//    //Check if the notes DAO is empty
+//    @Query("SELECT (SELECT COUNT(*) FROM notes) == 0")
+//    fun isEmpty(): Boolean
 
 }
