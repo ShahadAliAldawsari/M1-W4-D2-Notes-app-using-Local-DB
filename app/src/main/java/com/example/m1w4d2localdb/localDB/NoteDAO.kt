@@ -1,6 +1,5 @@
 package com.example.m1w4d2localdb.localDB
 
-import android.util.Log
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert

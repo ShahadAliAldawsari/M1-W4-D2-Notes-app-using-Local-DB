@@ -27,6 +27,7 @@ fun NewNoteScreen(
     isDark: MutableState<Boolean>,
     title:String
 ){
+
     Header(isDark=isDark, title = title)
 
     var title by remember { mutableStateOf(note.title) }

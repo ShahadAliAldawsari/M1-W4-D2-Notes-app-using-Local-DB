@@ -1,5 +1,6 @@
 package com.example.m1w4d2localdb.appUi
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -33,7 +34,7 @@ import com.example.m1w4d2localdb.R
 import com.example.m1w4d2localdb.localDB.Note
 
 @Composable
-fun NoteEntityUiDesign (note:Note, deleteThisNote:()->Unit, editThisNote:()->Unit) {
+fun NoteEntityUiDesign (note:Note, deleteThisNote:(note:Note)->Unit, editThisNote:(note:Note)->Unit) {
     val iconSize = 28.dp
     val iconColor = MaterialTheme.colorScheme.onPrimary
     Card(
@@ -66,7 +67,7 @@ fun NoteEntityUiDesign (note:Note, deleteThisNote:()->Unit, editThisNote:()->Uni
                 ){
                     //button and icon to delete a note
                     Button(
-                        onClick = {deleteThisNote()},
+                        onClick = {deleteThisNote(note)},
                         modifier = Modifier
                             .padding(0.dp)
                             .wrapContentWidth(),
@@ -83,7 +84,7 @@ fun NoteEntityUiDesign (note:Note, deleteThisNote:()->Unit, editThisNote:()->Uni
 
                     //button and icon to edit a note
                     Button(
-                        onClick = {editThisNote()},
+                        onClick = {editThisNote(note)},
                         modifier = Modifier
                             .padding(0.dp)
                             .wrapContentWidth(),

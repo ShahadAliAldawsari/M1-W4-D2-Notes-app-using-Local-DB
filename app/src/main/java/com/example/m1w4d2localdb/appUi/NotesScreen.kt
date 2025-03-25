@@ -10,13 +10,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import com.example.m1w4d2localdb.localDB.Note
+import kotlinx.coroutines.Job
 
 @Composable
 fun AllNotesScreen(
     notesList: List<Note>,
     isDark: MutableState<Boolean>,
     editThisNote: () -> Unit,
-    deleteThisNote: () -> Unit,
+    deleteThisNote: () -> Job,
 ) {
     Header(title = "My Notes", isDark = isDark)
     if (notesList.isEmpty()) {
